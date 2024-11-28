@@ -1,6 +1,7 @@
 return {
 	{
 		"instant-markdown/vim-instant-markdown",
+    lazy = true,
 		ft = { "markdown" },
 		build = "yarn install",
 		config = function()

@@ -10,10 +10,12 @@ vim.o.relativenumber = true
 vim.o.cursorline = true
 vim.o.expandtab = false
 vim.o.tabstop = 2
-vim.o.smarttab = true
+vim.o.smarttab = false
+vim.o.expandtab = true
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.autoindent = true
+vim.o.smartindent = true
 vim.o.list = true
 vim.o.listchars = 'tab:|\\ ,trail:▫'
 vim.o.scrolloff = 4
@@ -21,7 +23,7 @@ vim.o.ttimeoutlen = 0
 vim.o.timeout = false
 vim.o.viewoptions = 'cursor,folds,slash,unix'
 vim.o.wrap = true
-vim.o.textwidth = 0
+vim.o.textwidth = 80
 vim.o.indentexpr = ''
 vim.o.foldmethod = 'indent'
 vim.o.foldlevel = 99
@@ -59,6 +61,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.md", com
 vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", command = "silent! lcd %:p:h", })
 
 vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
+
+vim.g.any_jump_disable_default_keybindings = 1
 
 vim.g.terminal_color_0  = '#000000'
 vim.g.terminal_color_1  = '#FF5555'

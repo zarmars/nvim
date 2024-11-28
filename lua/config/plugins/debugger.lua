@@ -1,13 +1,14 @@
 local compile = function()
 	vim.cmd("write")
 	local filetype = vim.bo.filetype
-	if filetype == "cpp" or filetype == "c" then
+	if filetype == "cpp" or filetype == "c" or filetype == "cc" then
 		os.execute("gcc " .. vim.fn.expand("%") .. " -g -o " .. vim.fn.expand("%<"))
 	end
 end
 return {
 	{
 		"mfussenegger/nvim-dap",
+    lazy = true,
 		dependencies = {
 			{
 				"ravenxrz/DAPInstall.nvim",

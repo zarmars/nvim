@@ -1,6 +1,7 @@
 return {
 	{
 		"SirVer/ultisnips",
+    Lazy = true,
 		dependencies = {
 			"honza/vim-snippets",
 		},
